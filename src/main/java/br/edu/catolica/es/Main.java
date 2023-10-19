@@ -1,5 +1,7 @@
 package br.edu.catolica.es;
 
+import br.edu.catolica.es.filizola.Filizola;
+import br.edu.catolica.es.toledo.Toledo;
 import br.edu.catolica.es.urano.Urano;
 
 import java.util.ArrayList;
@@ -16,5 +18,14 @@ public class Main {
 
         var urano = new Urano();
         urano.exportar(listaProdutos, "aloo");
+        System.out.println("*".repeat(100));
+
+        var toledo = new Toledo();
+        toledo.exportar(listaProdutos, "aloo");
+        System.out.println("*".repeat(100));
+
+        var filizola = new Filizola();
+        filizola.exportar(listaProdutos, "aloo");
+        System.out.println("*".repeat(100));
     }
 }
