@@ -15,9 +15,6 @@ public class Main {
         listaProdutos.add(produto2);
 
         var urano = new Urano();
-
-        for(int i = 0; i < listaProdutos.size(); i++) {
-            System.out.println(urano.exportar(listaProdutos, "aloo"));
-        }
+        urano.exportar(listaProdutos, "aloo");
     }
 }
