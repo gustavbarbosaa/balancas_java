@@ -5,27 +5,36 @@ import br.edu.catolica.es.toledo.Toledo;
 import br.edu.catolica.es.urano.Urano;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        List<Produto> listaProdutos = new ArrayList<>();
+        var scanner = new Scanner(System.in);
+        var produto = new Produto();
+        ArrayList<Produto> listaProduto = new ArrayList<>();
 
-        var produto1 = new Produto(184, "P", "QUEIJO GRUYERE KG", 21.90);
-        var produto2 = new Produto(288, "P", "QUEIJO PROVOLETE KG", 12.29);
-        listaProdutos.add(produto1);
-        listaProdutos.add(produto2);
+        System.out.print("Informe o código do produto: ");
+        produto.setCodigo(scanner.nextInt());
 
-        var urano = new Urano();
-        urano.exportar(listaProdutos, "aloo");
-        System.out.println("*".repeat(100));
+        System.out.print("Informe o tipo do produto - P/U: ");
+        produto.setTipo(scanner.next());
+
+        scanner.nextLine();
+        System.out.print("Informe a dscrição do produto: ");
+        produto.setDescricao(scanner.nextLine());
+
+        System.out.print("Informe o valor do produto: ");
+        produto.setValor(scanner.nextDouble());
+
+        listaProduto.add(produto);
 
         var toledo = new Toledo();
-        toledo.exportar(listaProdutos, "aloo");
-        System.out.println("*".repeat(100));
+        toledo.exportar(listaProduto, "C:\\Users\\NETLINE\\projetos-java\\balancas_java");
+
+        var urano = new Urano();
+        urano.exportar(listaProduto, "C:\\Users\\NETLINE\\projetos-java\\balancas_java");
 
         var filizola = new Filizola();
-        filizola.exportar(listaProdutos, "aloo");
-        System.out.println("*".repeat(100));
+        filizola.exportar(listaProduto, "C:\\Users\\NETLINE\\projetos-java\\balancas_java");
     }
 }
